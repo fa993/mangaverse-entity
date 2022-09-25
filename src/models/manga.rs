@@ -1,7 +1,7 @@
 use chrono::NaiveDateTime;
 use serde::Serialize;
 
-use super::{author::MangaAuthor, chapter::MangaChapter, genre::MangaGenre, source::MangaSource};
+use super::{author::Author, chapter::MangaChapter, genre::Genre, source::MangaSource};
 
 #[derive(Serialize, Default, Debug)]
 pub struct CompleteManga {
@@ -14,9 +14,9 @@ pub struct MainManga {
     #[serde(flatten)]
     pub manga_view: MangaView,
     pub chapters: Vec<MangaChapter>,
-    pub authors: Vec<MangaAuthor>,
-    pub artists: Vec<MangaAuthor>,
-    pub genres: Vec<MangaGenre>,
+    pub authors: Vec<Author>,
+    pub artists: Vec<Author>,
+    pub genres: Vec<Genre>,
 }
 
 #[derive(Serialize, Default, Debug)]

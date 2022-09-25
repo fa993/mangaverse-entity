@@ -1,7 +1,7 @@
 use serde::Serialize;
 
 #[derive(Serialize, Default, Debug)]
-pub struct MangaGenre {
+pub struct Genre {
     pub id: String,
     pub name: String,
 }
