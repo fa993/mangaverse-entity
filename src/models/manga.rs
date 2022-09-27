@@ -8,6 +8,7 @@ pub struct MangaTable {
     pub id: String,
     pub linked_id: String,
     pub is_listed: bool,
+    pub name: String,
     pub cover_url: String,
     pub url: String,
     pub last_updated: Option<NaiveDateTime>,
