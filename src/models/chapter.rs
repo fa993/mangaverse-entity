@@ -1,7 +1,10 @@
 use chrono::NaiveDateTime;
 use serde::Serialize;
 
-pub struct ChapterTable {
+use super::page::PageTable;
+
+#[derive(Debug)]
+pub struct ChapterTable<'a> {
     pub chapter_id: String,
     pub chapter_name: String,
     pub chapter_number: String,
@@ -9,6 +12,8 @@ pub struct ChapterTable {
     pub manga_id: String,
     pub last_watch_time: i64,
     pub sequence_number: i32,
+
+    pub pages: &'a [PageTable],
 }
 
 #[derive(Serialize, Default, Debug)]

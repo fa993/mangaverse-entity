@@ -1,10 +1,15 @@
 use chrono::NaiveDateTime;
 use serde::Serialize;
 
-use super::{author::Author, chapter::MangaChapter, genre::Genre, source::MangaSource};
+use super::{
+    author::Author,
+    chapter::{ChapterTable, MangaChapter},
+    genre::Genre,
+    source::{MangaSource, SourceTable},
+};
 
-#[derive(Default, Debug)]
-pub struct MangaTable {
+#[derive(Debug)]
+pub struct MangaTable<'a> {
     pub id: String,
     pub linked_id: String,
     pub is_listed: bool,
@@ -15,10 +20,15 @@ pub struct MangaTable {
     pub status: String,
     pub is_main: String,
     pub description: String,
-    pub source_id: String,
     pub last_watch_time: Option<NaiveDateTime>,
     pub public_id: String,
-    pub is_old: bool
+    pub is_old: bool,
+
+    pub source: &'a SourceTable,
+    pub chapter: &'a [ChapterTable<'a>],
+    pub authors: &'a [Author],
+    pub artists: &'a [Author],
+    pub genres: &'a [Genre],
 }
 
 #[derive(Serialize, Default, Debug)]
