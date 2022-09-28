@@ -29,6 +29,7 @@ pub struct MangaTable<'a> {
     pub authors: &'a [Author],
     pub artists: &'a [Author],
     pub genres: &'a [Genre],
+    pub titles: &'a [String]
 }
 
 #[derive(Serialize, Default, Debug)]
