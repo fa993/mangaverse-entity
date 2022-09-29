@@ -3,7 +3,7 @@ use serde::Serialize;
 
 use super::page::PageTable;
 
-#[derive(Debug)]
+#[derive(Default, Debug)]
 pub struct ChapterTable {
     pub chapter_id: String,
     pub chapter_name: String,

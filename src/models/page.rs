@@ -1,6 +1,6 @@
 use serde::Serialize;
 
-#[derive(Debug)]
+#[derive(Default, Debug)]
 pub struct PageTable {
     pub id: i32,
     pub url: String,

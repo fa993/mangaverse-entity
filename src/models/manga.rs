@@ -18,7 +18,7 @@ pub struct MangaTable<'a> {
     pub url: String,
     pub last_updated: Option<NaiveDateTime>,
     pub status: String,
-    pub is_main: String,
+    pub is_main: bool,
     pub description: String,
     pub last_watch_time: Option<NaiveDateTime>,
     pub public_id: String,
@@ -30,6 +30,34 @@ pub struct MangaTable<'a> {
     pub artists: Vec<String>,
     pub genres: &'a [Genre],
     pub titles: Vec<String>
+}
+
+impl MangaTable<'_> {
+    
+    pub fn new<'a>(st: &'a SourceTable, ge: &'a [Genre]) -> MangaTable<'a> {
+        MangaTable { 
+            id: String::default(),
+            linked_id: String::default(), 
+            is_listed: bool::default(), 
+            name: String::default(), 
+            cover_url: String::default(), 
+            url: String::default(), 
+            last_updated: None, 
+            status: String::default(), 
+            is_main: bool::default(), 
+            description: String::default(), 
+            last_watch_time: None,
+            public_id: String::default(), 
+            is_old: bool::default(), 
+            source: st, 
+            chapter: Vec::default(), 
+            authors: Vec::default(), 
+            artists: Vec::default(), 
+            genres: ge, 
+            titles: Vec::default()
+        }
+    }
+
 }
 
 #[derive(Serialize, Default, Debug)]
