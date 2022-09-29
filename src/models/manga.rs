@@ -25,11 +25,11 @@ pub struct MangaTable<'a> {
     pub is_old: bool,
 
     pub source: &'a SourceTable,
-    pub chapter: &'a [ChapterTable<'a>],
-    pub authors: &'a [Author],
-    pub artists: &'a [Author],
+    pub chapter: Vec<ChapterTable>,
+    pub authors: Vec<String>,
+    pub artists: Vec<String>,
     pub genres: &'a [Genre],
-    pub titles: &'a [String]
+    pub titles: Vec<String>
 }
 
 #[derive(Serialize, Default, Debug)]
