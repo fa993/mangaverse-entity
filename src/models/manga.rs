@@ -28,13 +28,13 @@ pub struct MangaTable<'a> {
     pub chapter: Vec<ChapterTable>,
     pub authors: Vec<String>,
     pub artists: Vec<String>,
-    pub genres: &'a [Genre],
+    pub genres: Vec<&'a Genre>,
     pub titles: Vec<String>
 }
 
 impl MangaTable<'_> {
     
-    pub fn new<'a>(st: &'a SourceTable, ge: &'a [Genre]) -> MangaTable<'a> {
+    pub fn new<'a>(st: &'a SourceTable) -> MangaTable<'a> {
         MangaTable { 
             id: String::default(),
             linked_id: String::default(), 
@@ -53,7 +53,7 @@ impl MangaTable<'_> {
             chapter: Vec::default(), 
             authors: Vec::default(), 
             artists: Vec::default(), 
-            genres: ge, 
+            genres: Vec::default(), 
             titles: Vec::default()
         }
     }
