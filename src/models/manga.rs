@@ -26,8 +26,8 @@ pub struct MangaTable<'a> {
 
     pub source: &'a SourceTable,
     pub chapter: Vec<ChapterTable>,
-    pub authors: Vec<String>,
-    pub artists: Vec<String>,
+    pub authors: Vec<&'a str>,
+    pub artists: Vec<&'a str>,
     pub genres: Vec<&'a Genre>,
     pub titles: Vec<String>
 }
