@@ -20,7 +20,7 @@ pub struct MangaTable<'a> {
     pub status: String,
     pub is_main: bool,
     pub description: String,
-    pub last_watch_time: Option<NaiveDateTime>,
+    pub last_watch_time: Option<i64>,
     pub public_id: String,
     pub is_old: bool,
 
